@@ -3,20 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Polityka Prywatnosci - POZER</title>
+  <title>Polityka Prywatności - POZER</title>
   <style>
-    :root {
-      color-scheme: light dark;
-    }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.55;
+      line-height: 1.65;
       background: #f4f5f7;
       color: #1f2937;
     }
     main {
-      max-width: 760px;
+      max-width: 860px;
       margin: 24px auto;
       padding: 24px;
       background: #ffffff;
@@ -27,22 +24,10 @@
       line-height: 1.25;
       margin-top: 1.4em;
     }
-    h1 {
-      margin-top: 0;
-    }
-    code {
-      background: #eef1f4;
-      padding: 0.15em 0.35em;
-      border-radius: 6px;
-      font-size: 0.95em;
-    }
-    ul {
-      padding-left: 1.2em;
-    }
-    .muted {
-      color: #6b7280;
-    }
-    @media (max-width: 820px) {
+    h1 { margin-top: 0; }
+    ul { padding-left: 1.2em; }
+    .muted { color: #6b7280; }
+    @media (max-width: 900px) {
       main {
         margin: 0;
         border-radius: 0;
@@ -53,43 +38,38 @@
 </head>
 <body>
   <main>
-    <h1>Polityka Prywatnosci (wersja robocza)</h1>
-    <p class="muted">Data aktualizacji: 19 lutego 2026</p>
-    <p>To jest roboczy dokument dla aplikacji POZER. Przed publikacja publiczna skonsultuj finalna wersje z prawnikiem.</p>
+    <h1>Polityka Prywatności Aplikacji POZER</h1>
+    <p class="muted">Data wejścia w życie: 19 lutego 2026 r.</p>
 
-    <h2>1. Jakie dane przetwarza aplikacja</h2>
-    <p>POZER przechowuje dane glownie lokalnie na urzadzeniu uzytkownika, m.in.:</p>
+    <p>Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych oraz innych informacji użytkowników aplikacji mobilnej POZER (dalej: "Aplikacja"). Zależy nam na Twojej prywatności, dlatego zaprojektowaliśmy Aplikację w modelu "offline-first", co oznacza, że większość Twoich danych zostaje wyłącznie na Twoim urządzeniu.</p>
+
+    <h2>1. Administrator Danych</h2>
+    <p>Administratorem Twoich danych jest Jonasz Olszewski, prowadzący jednoosobową działalność gospodarczą. W sprawach związanych z prywatnością i ochroną danych możesz skontaktować się pod adresem e-mail: kontakt@jonaszolszewski.pl.</p>
+
+    <h2>2. Jakie dane przetwarzamy i w jakim celu</h2>
+    <p>Aplikacja POZER szanuje Twoją przestrzeń roboczą. Przetwarzamy dane w następujący sposób:</p>
     <ul>
-      <li>sesje, checklisty, notatki i ustawienia aplikacji,</li>
-      <li>obrazy i pliki audio dodane przez uzytkownika,</li>
-      <li>dane pomocnicze do trybu offline.</li>
+      <li>Dane zapisywane lokalnie (Offline): Tworzone przez Ciebie sesje, checklisty, notatki, preferencje, własne pozycje, a także dodane obrazy i pliki audio są przechowywane w pamięci Twojego urządzenia. Administrator nie ma do nich bezpośredniego dostępu.</li>
+      <li>Dane techniczne i analityczne: W celu zapewnienia stabilności i rozwoju Aplikacji, możemy zbierać zanonimizowane dane o błędach (crash logs) oraz podstawowe dane telemetryczne, które nie pozwalają na Twoją identyfikację.</li>
     </ul>
 
-    <h2>2. Uslugi zewnetrzne</h2>
-    <p>Aplikacja moze laczyc sie z uslugami zewnetrznymi, gdy uzytkownik korzysta z konkretnych funkcji:</p>
+    <h2>3. Integracje z Usługami Zewnętrznymi (Third-Party Services)</h2>
+    <p>Aby dostarczyć Ci zaawansowane funkcje, Aplikacja integruje się z zaufanymi usługami zewnętrznymi. Korzystanie z tych funkcji może wiązać się z przesłaniem niezbędnych, wyizolowanych danych do podmiotów trzecich:</p>
     <ul>
-      <li>Google AI (Gemini): analiza/generowanie tresci AI.</li>
-      <li>Google Places API: wyszukiwanie szczegolow lokalizacji i zdjec miejsc.</li>
-      <li>Open-Meteo i sunrise-sunset.org: pobieranie danych pogodowych i godzin slonca.</li>
-      <li>Google Sheets (CSV): import danych po podaniu linku przez uzytkownika.</li>
+      <li>Google AI (Gemini): Kiedy korzystasz z funkcji Kreatora Póz AI, przesłane przez Ciebie zdjęcie referencyjne lub opis tekstowy trafia do usług Google w celu wygenerowania wektorowej ilustracji (bez twarzy), tytułu, instrukcji oraz tagów.</li>
+      <li>Google Places API: Funkcja inteligentnego uzupełniania lokalizacji wysyła wpisywane przez Ciebie nazwy miejsc (np. "Opuszczona szklarnia") do serwerów Google w celu pobrania dokładnego adresu i opisu.</li>
+      <li>Dane Pogodowe: W celu dostarczenia informacji o warunkach na sesji (temperatura, godziny wschodu/zachodu słońca), Aplikacja wysyła zapytania z Twoimi współrzędnymi geograficznymi do serwisów Open-Meteo oraz sunrise-sunset.org.</li>
+      <li>Import z Google Sheets: Jeśli zdecydujesz się na import danych za pomocą linku CSV, Aplikacja nawiąże jednorazowe połączenie ze wskazanym arkuszem Google.</li>
     </ul>
 
-    <h2>3. Proxy obrazow przy generowaniu grafik udostepniania</h2>
-    <p>Przy tworzeniu niektorych grafik do udostepnienia aplikacja moze uzyc zewnetrznego proxy obrazow <code>images.weserv.nl</code>, aby poprawnie przetworzyc obrazy z obcych domen.</p>
-    <p>W takim przypadku do tej uslugi moze trafic:</p>
-    <ul>
-      <li>adres URL obrazu zrodlowego (link do obrazka),</li>
-      <li>podstawowe dane techniczne polaczenia sieciowego (np. adres IP), zgodnie z zasadami dostawcy proxy.</li>
-    </ul>
+    <h2>4. Proxy obrazów i serwery pośredniczące</h2>
+    <p>Podczas generowania podglądów grafik (np. do udostępniania ulubionych miejsc klientom), Aplikacja może korzystać z zewnętrznego serwera proxy (images.weserv.nl). Wymaga tego optymalizacja i poprawne przetwarzanie obrazów pochodzących z różnych domen. W takim przypadku do dostawcy usługi proxy przekazywany jest publiczny adres URL obrazka oraz standardowe logi połączenia sieciowego (np. Twój adres IP).</p>
 
-    <h2>4. Co aplikacja nie robi</h2>
-    <p>Aplikacja nie sprzedaje danych osobowych uzytkownikow.</p>
+    <h2>5. Udostępnianie danych</h2>
+    <p>Nigdy nie sprzedajemy Twoich danych osobowych. Twoje dane mogą być przekazane podmiotom trzecim wyłącznie w przypadku, gdy wymaga tego prawo (np. na żądanie uprawnionych organów państwowych) lub gdy jest to technicznie niezbędne do świadczenia wyżej wymienionych usług zewnętrznych, z których dobrowolnie korzystasz.</p>
 
-    <h2>5. Kontakt</h2>
-    <p>W sprawach prywatnosci skontaktuj sie z administratorem aplikacji:</p>
-    <ul>
-      <li>kontakt@jonaszolszewski.pl</li>
-    </ul>
+    <h2>6. Twoje Prawa</h2>
+    <p>Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia oraz ograniczenia przetwarzania. Ponieważ większość danych (jak Twoje sesje i notatki) znajduje się wyłącznie na Twoim telefonie, pełne usunięcie tych informacji następuje w momencie odinstalowania Aplikacji. W przypadku danych przetwarzanych przez Administratora, skontaktuj się z nami mailowo.</p>
   </main>
 </body>
 </html>
