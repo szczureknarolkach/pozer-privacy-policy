@@ -8,14 +8,14 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.65;
+      line-height: 1.7;
       background: #f4f5f7;
       color: #1f2937;
     }
     main {
-      max-width: 860px;
+      max-width: 920px;
       margin: 24px auto;
-      padding: 24px;
+      padding: 28px;
       background: #ffffff;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
@@ -26,6 +26,7 @@
     }
     h1 { margin-top: 0; }
     ul { padding-left: 1.2em; }
+    li { margin: 0.35em 0; }
     .muted { color: #6b7280; }
     @media (max-width: 900px) {
       main {
@@ -39,37 +40,119 @@
 <body>
   <main>
     <h1>Polityka Prywatności Aplikacji POZER</h1>
-    <p class="muted">Data wejścia w życie: 19 lutego 2026 r.</p>
+    <p class="muted">Data wejścia w życie: 19 marca 2026 r.</p>
 
-    <p>Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych oraz innych informacji użytkowników aplikacji mobilnej POZER (dalej: "Aplikacja"). Zależy nam na Twojej prywatności, dlatego zaprojektowaliśmy Aplikację w modelu "offline-first", co oznacza, że większość Twoich danych zostaje wyłącznie na Twoim urządzeniu.</p>
+    <p>Niniejsza Polityka Prywatności opisuje, jakie dane są przetwarzane podczas korzystania z aplikacji POZER oraz w jakim celu są używane. POZER nadal działa głównie w modelu "offline-first", czyli większość danych pozostaje na Twoim urządzeniu. Jednocześnie aplikacja może teraz oferować logowanie oraz ręczny backup wybranych danych w chmurze Firebase.</p>
 
-    <h2>1. Administrator Danych</h2>
-    <p>Administratorem Twoich danych jest Jonasz Olszewski, prowadzący jednoosobową działalność gospodarczą. W sprawach związanych z prywatnością i ochroną danych możesz skontaktować się pod adresem e-mail: kontakt@jonaszolszewski.pl.</p>
+    <h2>1. Administrator danych</h2>
+    <p>Administratorem danych jest Jonasz Olszewski, prowadzący jednoosobową działalność gospodarczą.</p>
+    <p>W sprawach związanych z prywatnością możesz skontaktować się pod adresem: <strong>kontakt@jonaszolszewski.pl</strong>.</p>
 
-    <h2>2. Jakie dane przetwarzamy i w jakim celu</h2>
-    <p>Aplikacja POZER szanuje Twoją przestrzeń roboczą. Przetwarzamy dane w następujący sposób:</p>
+    <h2>2. Jakie dane przetwarzamy</h2>
     <ul>
-      <li>Dane zapisywane lokalnie (Offline): Tworzone przez Ciebie sesje, checklisty, notatki, preferencje, własne pozycje, a także dodane obrazy i pliki audio są przechowywane w pamięci Twojego urządzenia. Administrator nie ma do nich bezpośredniego dostępu.</li>
-      <li>Dane techniczne i analityczne: W celu zapewnienia stabilności i rozwoju Aplikacji, możemy zbierać zanonimizowane dane o błędach (crash logs) oraz podstawowe dane telemetryczne, które nie pozwalają na Twoją identyfikację.</li>
+      <li>Dane zapisywane lokalnie na urządzeniu: sesje, checklisty, notatki, preferencje, własne pozy, lokalne pliki zdjęć i audio oraz inne dane potrzebne do działania aplikacji offline.</li>
+      <li>Dane konta użytkownika w Firebase Authentication: identyfikator użytkownika, adres e-mail, nazwa wyświetlana oraz identyfikator dostawcy logowania, jeżeli zdecydujesz się zalogować przez Google lub Apple.</li>
+      <li>Dane backupu w chmurze Firebase Firestore: miasto używane w widżecie "Warunki na dziś", ustawienie auto-lokalizacji oraz lista ulubionych póz.</li>
+      <li>Dane techniczne i diagnostyczne: podstawowe logi błędów, informacje o stabilności działania aplikacji i informacje potrzebne do ochrony usług backendowych przed nadużyciami.</li>
     </ul>
 
-    <h2>3. Integracje z Usługami Zewnętrznymi (Third-Party Services)</h2>
-    <p>Aby dostarczyć Ci zaawansowane funkcje, Aplikacja integruje się z zaufanymi usługami zewnętrznymi. Korzystanie z tych funkcji może wiązać się z przesłaniem niezbędnych, wyizolowanych danych do podmiotów trzecich:</p>
+    <h2>3. W jakim celu używamy danych</h2>
     <ul>
-      <li>Google AI (Gemini): Kiedy korzystasz z funkcji Kreatora Póz AI, przesłane przez Ciebie zdjęcie referencyjne lub opis tekstowy trafia do usług Google w celu wygenerowania wektorowej ilustracji (bez twarzy), tytułu, instrukcji oraz tagów.</li>
-      <li>Google Places API: Funkcja inteligentnego uzupełniania lokalizacji wysyła wpisywane przez Ciebie nazwy miejsc (np. "Opuszczona szklarnia") do serwerów Google w celu pobrania dokładnego adresu i opisu.</li>
-      <li>Dane Pogodowe: W celu dostarczenia informacji o warunkach na sesji (temperatura, godziny wschodu/zachodu słońca), Aplikacja wysyła zapytania z Twoimi współrzędnymi geograficznymi do serwisów Open-Meteo oraz sunrise-sunset.org.</li>
-      <li>Import z Google Sheets: Jeśli zdecydujesz się na import danych za pomocą linku CSV, Aplikacja nawiąże jednorazowe połączenie ze wskazanym arkuszem Google.</li>
+      <li>aby uruchamiać aplikację i zapisywać Twoje ustawienia lokalnie,</li>
+      <li>aby umożliwić logowanie przez Google lub Apple,</li>
+      <li>aby utworzyć konto użytkownika w Firebase,</li>
+      <li>aby utworzyć, wyświetlić i przywrócić ręczny backup danych testowych w chmurze,</li>
+      <li>aby umożliwić usunięcie konta i danych chmurowych z poziomu aplikacji,</li>
+      <li>aby chronić backend, diagnozować błędy i utrzymywać stabilność usługi.</li>
     </ul>
 
-    <h2>4. Proxy obrazów i serwery pośredniczące</h2>
-    <p>Podczas generowania podglądów grafik (np. do udostępniania ulubionych miejsc klientom), Aplikacja może korzystać z zewnętrznego serwera proxy (images.weserv.nl). Wymaga tego optymalizacja i poprawne przetwarzanie obrazów pochodzących z różnych domen. W takim przypadku do dostawcy usługi proxy przekazywany jest publiczny adres URL obrazka oraz standardowe logi połączenia sieciowego (np. Twój adres IP).</p>
+    <h2>4. Logowanie przez Google i Apple</h2>
+    <p>Jeżeli zdecydujesz się zalogować:</p>
+    <ul>
+      <li>logowanie jest obsługiwane przez Firebase Authentication,</li>
+      <li>dostawcą tożsamości może być Google albo Apple,</li>
+      <li>POZER otrzymuje od dostawcy wyłącznie dane potrzebne do utworzenia i utrzymania konta, takie jak identyfikator użytkownika, adres e-mail oraz nazwa wyświetlana, jeśli dostawca je udostępni,</li>
+      <li>logowanie jest opcjonalne, ale jest wymagane do używania backupu w chmurze.</li>
+    </ul>
 
-    <h2>5. Udostępnianie danych</h2>
-    <p>Nigdy nie sprzedajemy Twoich danych osobowych. Twoje dane mogą być przekazane podmiotom trzecim wyłącznie w przypadku, gdy wymaga tego prawo (np. na żądanie uprawnionych organów państwowych) lub gdy jest to technicznie niezbędne do świadczenia wyżej wymienionych usług zewnętrznych, z których dobrowolnie korzystasz.</p>
+    <h2>5. Backup w chmurze</h2>
+    <p>Na obecnym etapie backup w chmurze obejmuje wyłącznie:</p>
+    <ul>
+      <li>miasto z widżetu "Warunki na dziś",</li>
+      <li>ustawienie auto-lokalizacji,</li>
+      <li>listę ulubionych póz.</li>
+    </ul>
+    <p>Backup nie obejmuje obecnie wszystkich danych aplikacji. Większość treści nadal pozostaje lokalnie na urządzeniu.</p>
+    <p>Backup jest tworzony ręcznie przez użytkownika z poziomu sekcji "Profil i ustawienia". Po pierwszym zalogowaniu aplikacja może również utworzyć pierwszy backup startowy, aby połączyć lokalne dane testowe z nowym kontem.</p>
 
-    <h2>6. Twoje Prawa</h2>
-    <p>Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia oraz ograniczenia przetwarzania. Ponieważ większość danych (jak Twoje sesje i notatki) znajduje się wyłącznie na Twoim telefonie, pełne usunięcie tych informacji następuje w momencie odinstalowania Aplikacji. W przypadku danych przetwarzanych przez Administratora, skontaktuj się z nami mailowo.</p>
+    <h2>6. Gdzie dane są przechowywane</h2>
+    <ul>
+      <li>lokalnie na Twoim urządzeniu,</li>
+      <li>w usługach Firebase, w szczególności Firebase Authentication oraz Cloud Firestore,</li>
+      <li>tymczasowo w usługach zewnętrznych niezbędnych do działania wybranych funkcji aplikacji.</li>
+    </ul>
+
+    <h2>7. Integracje z usługami zewnętrznymi</h2>
+    <ul>
+      <li>Firebase Authentication: do logowania i obsługi kont użytkowników.</li>
+      <li>Cloud Firestore: do przechowywania prostych backupów chmurowych użytkownika.</li>
+      <li>Firebase Storage: do przechowywania zasobów aplikacji oraz innych plików używanych przez aplikację.</li>
+      <li>Firebase App Check oraz powiązane mechanizmy bezpieczeństwa: do ochrony backendu przed nadużyciami.</li>
+      <li>Google Sign-In: do logowania użytkownika kontem Google.</li>
+      <li>Sign in with Apple: do logowania użytkownika kontem Apple.</li>
+      <li>Google AI (Gemini): do funkcji AI, takich jak tworzenie ilustracji, analiza zdjęć i generowanie opisów.</li>
+      <li>Google Places API: do pobierania danych o miejscach.</li>
+      <li>Open-Meteo oraz sunrise-sunset.org: do danych pogodowych i godzin wschodu oraz zachodu słońca.</li>
+      <li>Google Sheets: jeśli użytkownik sam zdecyduje się skorzystać z importu CSV.</li>
+      <li>images.weserv.nl: do technicznego proxy niektórych obrazów.</li>
+    </ul>
+
+    <h2>8. Podstawa korzystania z funkcji chmurowych</h2>
+    <p>Korzystanie z logowania i backupu w chmurze jest dobrowolne. Jeżeli nie chcesz korzystać z funkcji konta:</p>
+    <ul>
+      <li>możesz nadal używać aplikacji lokalnie,</li>
+      <li>Twoje lokalne dane pozostają na urządzeniu,</li>
+      <li>backup w chmurze i synchronizacja konta nie będą aktywne.</li>
+    </ul>
+
+    <h2>9. Usuwanie konta i danych</h2>
+    <p>Jeżeli korzystasz z logowania, możesz usunąć konto z poziomu aplikacji.</p>
+    <p>Usunięcie konta powoduje:</p>
+    <ul>
+      <li>usunięcie konta użytkownika w Firebase Authentication,</li>
+      <li>usunięcie dokumentu użytkownika i backupów zapisanych w Cloud Firestore,</li>
+      <li>wylogowanie z aplikacji.</li>
+    </ul>
+    <p>Usunięcie konta nie czyści automatycznie wszystkich danych lokalnych zapisanych na urządzeniu, chyba że użytkownik skorzysta osobno z funkcji resetu lokalnych danych lub odinstaluje aplikację.</p>
+
+    <h2>10. Jak długo przechowujemy dane</h2>
+    <ul>
+      <li>Dane lokalne pozostają na urządzeniu do momentu ich usunięcia przez użytkownika, resetu aplikacji albo odinstalowania aplikacji.</li>
+      <li>Dane konta i backupy chmurowe pozostają do czasu usunięcia konta przez użytkownika albo do czasu ręcznego usunięcia ich przez administratora w sytuacjach wymaganych prawem lub technicznie uzasadnionych.</li>
+    </ul>
+
+    <h2>11. Udostępnianie danych</h2>
+    <p>Nie sprzedajemy Twoich danych osobowych.</p>
+    <p>Dane mogą być przekazywane wyłącznie:</p>
+    <ul>
+      <li>dostawcom usług technicznych niezbędnych do działania aplikacji,</li>
+      <li>gdy wymaga tego prawo,</li>
+      <li>gdy jest to konieczne do realizacji funkcji, z której użytkownik świadomie korzysta.</li>
+    </ul>
+
+    <h2>12. Twoje prawa</h2>
+    <p>Masz prawo do:</p>
+    <ul>
+      <li>dostępu do danych,</li>
+      <li>sprostowania danych,</li>
+      <li>usunięcia danych,</li>
+      <li>ograniczenia przetwarzania,</li>
+      <li>kontaktu z administratorem w sprawach prywatności.</li>
+    </ul>
+    <p>W przypadku danych lokalnych najprostszą metodą usunięcia jest skorzystanie z odpowiednich funkcji w aplikacji albo odinstalowanie aplikacji. W przypadku danych konta i backupów chmurowych możesz użyć funkcji "Usuń konto" w aplikacji albo skontaktować się mailowo.</p>
+
+    <h2>13. Zmiany polityki prywatności</h2>
+    <p>Polityka prywatności może być aktualizowana wraz ze zmianami funkcji aplikacji, wymogów prawnych lub wymogów sklepów z aplikacjami. Aktualna wersja jest publikowana pod adresem: <strong>https://szczureknarolkach.github.io/pozer-privacy-policy/</strong>.</p>
   </main>
 </body>
 </html>
