@@ -40,7 +40,7 @@
 <body>
   <main>
     <h1>Polityka Prywatności Aplikacji POZER</h1>
-    <p class="muted">Data wejścia w życie: 19 marca 2026 r.</p>
+    <p class="muted">Data wejścia w życie: 25 marca 2026 r.</p>
 
     <p>Niniejsza Polityka Prywatności opisuje, jakie dane są przetwarzane podczas korzystania z aplikacji POZER oraz w jakim celu są używane. POZER nadal działa głównie w modelu "offline-first", czyli większość danych pozostaje na Twoim urządzeniu. Jednocześnie aplikacja może teraz oferować logowanie oraz ręczny backup wybranych danych w chmurze Firebase.</p>
 
@@ -52,7 +52,8 @@
     <ul>
       <li>Dane zapisywane lokalnie na urządzeniu: sesje, checklisty, notatki, preferencje, własne pozy, lokalne pliki zdjęć i audio oraz inne dane potrzebne do działania aplikacji offline.</li>
       <li>Dane konta użytkownika w Firebase Authentication: identyfikator użytkownika, adres e-mail, nazwa wyświetlana oraz identyfikator dostawcy logowania, jeżeli zdecydujesz się zalogować przez Google lub Apple.</li>
-      <li>Dane backupu w chmurze Firebase Firestore: miasto używane w widżecie "Warunki na dziś", ustawienie auto-lokalizacji oraz lista ulubionych póz.</li>
+      <li>Dane backupu w chmurze Firebase Firestore i Firebase Storage: wybrane dane potrzebne do odtworzenia korzystania z aplikacji po zalogowaniu, w szczególności ustawienia profilu i aplikacji, lista ulubionych póz, sesje, checklisty, lokalizacje, własne pozy, wybrane filtry i preferencje widoków oraz powiązane pliki potrzebne do przywrócenia tych danych.</li>
+      <li>Zagregowane statystyki popularności póz: aplikacja może okresowo tworzyć globalne zestawienia "Najpopularniejsze" i "Ostatnio dodane". Takie zestawienia nie pokazują, kto polubił, zapisał lub dodał daną pozę do sesji. Końcowy wynik zawiera wyłącznie zbiorczy ranking póz, bez publicznego ujawniania tożsamości użytkowników.</li>
       <li>Dane techniczne i diagnostyczne: podstawowe logi błędów, informacje o stabilności działania aplikacji i informacje potrzebne do ochrony usług backendowych przed nadużyciami.</li>
     </ul>
 
@@ -62,6 +63,7 @@
       <li>aby umożliwić logowanie przez Google lub Apple,</li>
       <li>aby utworzyć konto użytkownika w Firebase,</li>
       <li>aby utworzyć, wyświetlić i przywrócić ręczny backup danych testowych w chmurze,</li>
+      <li>aby okresowo zbudować lekkie, globalne i zagregowane zestawienia najpopularniejszych póz w katalogu oraz w społeczności,</li>
       <li>aby umożliwić usunięcie konta i danych chmurowych z poziomu aplikacji,</li>
       <li>aby chronić backend, diagnozować błędy i utrzymywać stabilność usługi.</li>
     </ul>
@@ -76,14 +78,26 @@
     </ul>
 
     <h2>5. Backup w chmurze</h2>
-    <p>Na obecnym etapie backup w chmurze obejmuje wyłącznie:</p>
+    <p>Na obecnym etapie backup w chmurze może obejmować w szczególności:</p>
     <ul>
-      <li>miasto z widżetu "Warunki na dziś",</li>
-      <li>ustawienie auto-lokalizacji,</li>
-      <li>listę ulubionych póz.</li>
+      <li>ustawienia profilu i aplikacji, w tym miasto z widżetu "Warunki na dziś", auto-lokalizację, język aplikacji i motyw,</li>
+      <li>listę ulubionych póz,</li>
+      <li>sesje, checklisty, lokalizacje i wybrane ustawienia widoków,</li>
+      <li>własne pozy użytkownika,</li>
+      <li>wybrane notatki i inne dane potrzebne do przywrócenia działania aplikacji po zalogowaniu,</li>
+      <li>powiązane pliki multimedialne, jeżeli są potrzebne do przywrócenia powyższych danych.</li>
     </ul>
     <p>Backup nie obejmuje obecnie wszystkich danych aplikacji. Większość treści nadal pozostaje lokalnie na urządzeniu.</p>
-    <p>Backup jest tworzony ręcznie przez użytkownika z poziomu sekcji "Profil i ustawienia". Po pierwszym zalogowaniu aplikacja może również utworzyć pierwszy backup startowy, aby połączyć lokalne dane testowe z nowym kontem.</p>
+    <p>Backup może zostać utworzony ręcznie przez użytkownika z poziomu sekcji "Profil i ustawienia". Po pierwszym zalogowaniu aplikacja może również utworzyć pierwszy backup startowy, a później może okresowo zapisać automatyczną kopię po ponownym otwarciu aplikacji, jeśli użytkownik nadal korzysta z konta i dane uległy zmianie.</p>
+    <p>POZER może wykorzystywać najnowszy dostępny backup użytkownika również do utworzenia globalnego rankingu najpopularniejszych póz w katalogu. Taki ranking:</p>
+    <ul>
+      <li>jest budowany najwyżej okresowo, zwykle nie częściej niż raz dziennie,</li>
+      <li>korzysta wyłącznie z najnowszej dostępnej kopii danych użytkownika, a nie z ciągłego śledzenia każdego kliknięcia w czasie rzeczywistym,</li>
+      <li>uwzględnia jedynie zbiorcze informacje, takie jak to, czy dana poza była oznaczona jako ulubiona albo dodana do sesji,</li>
+      <li>nie publikuje i nie pokazuje innym użytkownikom listy osób, które polubiły daną pozę albo zapisały ją do sesji,</li>
+      <li>zapisuje do odczytu przez aplikację wyłącznie gotowy, zagregowany wynik, a nie publiczną historię działań konkretnych osób.</li>
+    </ul>
+    <p>W sekcji społeczności "Odkrywaj" najpopularniejsze pozy są ustalane na podstawie zagregowanej liczby pobrań tych póz przez użytkowników. Również tutaj aplikacja pokazuje wyłącznie wynik zbiorczy, bez ujawniania innym użytkownikom, kto pobrał daną pozę.</p>
 
     <h2>6. Gdzie dane są przechowywane</h2>
     <ul>
@@ -113,6 +127,7 @@
       <li>możesz nadal używać aplikacji lokalnie,</li>
       <li>Twoje lokalne dane pozostają na urządzeniu,</li>
       <li>backup w chmurze i synchronizacja konta nie będą aktywne.</li>
+      <li>Twoje lokalne dane nie będą uwzględniane w chmurowym rankingu najpopularniejszych póz w katalogu.</li>
     </ul>
 
     <h2>9. Usuwanie konta i danych</h2>
@@ -129,6 +144,7 @@
     <ul>
       <li>Dane lokalne pozostają na urządzeniu do momentu ich usunięcia przez użytkownika, resetu aplikacji albo odinstalowania aplikacji.</li>
       <li>Dane konta i backupy chmurowe pozostają do czasu usunięcia konta przez użytkownika albo do czasu ręcznego usunięcia ich przez administratora w sytuacjach wymaganych prawem lub technicznie uzasadnionych.</li>
+      <li>Zagregowane rankingi popularności mogą być przechowywane osobno jako techniczne zestawienia zbiorcze potrzebne do działania aplikacji, ale nie zawierają publicznej listy działań konkretnych użytkowników.</li>
     </ul>
 
     <h2>11. Udostępnianie danych</h2>
