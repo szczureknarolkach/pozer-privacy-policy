@@ -53,6 +53,7 @@
       <li>Dane zapisywane lokalnie na urządzeniu: sesje, checklisty, notatki, preferencje, własne pozy, lokalne pliki zdjęć i audio oraz inne dane potrzebne do działania aplikacji offline.</li>
       <li>Dane konta użytkownika w Firebase Authentication: identyfikator użytkownika, adres e-mail, nazwa wyświetlana oraz identyfikator dostawcy logowania, jeżeli zdecydujesz się zalogować przez Google lub Apple.</li>
       <li>Dane backupu w chmurze Firebase Firestore i Firebase Storage: wybrane dane potrzebne do odtworzenia korzystania z aplikacji po zalogowaniu, w szczególności ustawienia profilu i aplikacji, lista ulubionych póz, sesje, checklisty, lokalizacje, własne pozy, wybrane filtry i preferencje widoków oraz powiązane pliki potrzebne do przywrócenia tych danych.</li>
+      <li>Dane funkcji społeczności "Odkrywaj": jeżeli użytkownik zdecyduje się zgłosić własną pozę do sekcji społeczności, aplikacja może przetwarzać obraz pozy, tytuł, instrukcje, przypisane kategorie i tagi, status moderacji, liczbę pobrań i zgłoszeń oraz opcjonalne publiczne dane autora, takie jak publiczna nazwa, nazwa użytkownika na Instagramie i adres strony www.</li>
       <li>Zagregowane statystyki popularności póz: aplikacja może okresowo tworzyć globalne zestawienia "Najpopularniejsze" i "Ostatnio dodane". Takie zestawienia nie pokazują, kto polubił, zapisał lub dodał daną pozę do sesji. Końcowy wynik zawiera wyłącznie zbiorczy ranking póz, bez publicznego ujawniania tożsamości użytkowników.</li>
       <li>Dane techniczne i diagnostyczne: podstawowe logi błędów, informacje o stabilności działania aplikacji i informacje potrzebne do ochrony usług backendowych przed nadużyciami.</li>
     </ul>
@@ -63,6 +64,9 @@
       <li>aby umożliwić logowanie przez Google lub Apple,</li>
       <li>aby utworzyć konto użytkownika w Firebase,</li>
       <li>aby utworzyć, wyświetlić i przywrócić ręczny backup danych testowych w chmurze,</li>
+      <li>aby umożliwić użytkownikowi przesłanie własnej pozy do moderowanej sekcji społeczności "Odkrywaj",</li>
+      <li>aby pokazywać innym użytkownikom zaakceptowane pozy społecznościowe wraz z publicznymi danymi autora, jeśli autor nie wybrał publikacji anonimowej,</li>
+      <li>aby przyjmować zgłoszenia naruszeń, blokować autorów i prowadzić ręczną moderację treści społecznościowych,</li>
       <li>aby okresowo zbudować lekkie, globalne i zagregowane zestawienia najpopularniejszych póz w katalogu oraz w społeczności,</li>
       <li>aby umożliwić usunięcie konta i danych chmurowych z poziomu aplikacji,</li>
       <li>aby chronić backend, diagnozować błędy i utrzymywać stabilność usługi.</li>
@@ -105,6 +109,18 @@
       <li>w usługach Firebase, w szczególności Firebase Authentication oraz Cloud Firestore,</li>
       <li>tymczasowo w usługach zewnętrznych niezbędnych do działania wybranych funkcji aplikacji.</li>
     </ul>
+
+    <h2>6a. Funkcja społeczności "Odkrywaj"</h2>
+    <p>Jeżeli użytkownik zdecyduje się opublikować własną pozę w społeczności:</p>
+    <ul>
+      <li>poza trafia najpierw do moderacji,</li>
+      <li>dopiero po zatwierdzeniu może być publicznie widoczna dla innych użytkowników w sekcji "Odkrywaj",</li>
+      <li>użytkownik może wybrać publikację anonimową albo dodać publiczną nazwę, nazwę użytkownika na Instagramie i adres strony www,</li>
+      <li>inni użytkownicy mogą pobrać taką pozę do swojej aplikacji, zgłosić naruszenie albo zablokować autora,</li>
+      <li>administrator może taką pozę zaakceptować, odrzucić, ukryć albo usunąć na stałe.</li>
+    </ul>
+    <p>Jeżeli poza zostanie ukryta, może zniknąć z publicznego feedu, ale nadal pozostać dostępna dla osób, które już wcześniej ją pobrały, jeśli jest to technicznie i prawnie uzasadnione.</p>
+    <p>Jeżeli poza zostanie usunięta na stałe z powodów moderacyjnych albo prawnych, aplikacja może usunąć ją z listy pobranych i zastąpić ją technicznym placeholderem w istniejących sesjach, aby nie zostawić uszkodzonego widoku.</p>
 
     <h2>7. Integracje z usługami zewnętrznymi</h2>
     <ul>
