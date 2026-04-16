@@ -4,187 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Polityka Prywatności - POZER</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.7;
-      background: #f4f5f7;
-      color: #1f2937;
-    }
-    main {
-      max-width: 920px;
-      margin: 24px auto;
-      padding: 28px;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    }
-    h1, h2 {
-      line-height: 1.25;
-      margin-top: 1.4em;
-    }
-    h1 { margin-top: 0; }
-    ul { padding-left: 1.2em; }
-    li { margin: 0.35em 0; }
-    .muted { color: #6b7280; }
-    @media (max-width: 900px) {
-      main {
-        margin: 0;
-        border-radius: 0;
-        min-height: 100vh;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/policy.css" />
 </head>
 <body>
   <main>
-    <h1>Polityka Prywatności Aplikacji POZER</h1>
-    <p class="muted">Data wejścia w życie: 25 marca 2026 r.</p>
+    <section class="hero">
+      <span class="brand" id="brand">POZER</span>
+      <div class="language-bar">
+        <div class="language-copy">
+          <strong id="language-label">Język strony</strong>
+          <span id="language-hint">Jeśli otworzyłeś tę stronę z aplikacji Pozer, właściwy język wybierze się automatycznie.</span>
+        </div>
+        <div class="language-switcher" id="language-switcher" aria-label="Language switcher"></div>
+      </div>
+    </section>
 
-    <p>Niniejsza Polityka Prywatności opisuje, jakie dane są przetwarzane podczas korzystania z aplikacji POZER oraz w jakim celu są używane. POZER nadal działa głównie w modelu "offline-first", czyli większość danych pozostaje na Twoim urządzeniu. Jednocześnie aplikacja może teraz oferować logowanie oraz ręczny backup wybranych danych w chmurze Firebase.</p>
-
-    <h2>1. Administrator danych</h2>
-    <p>Administratorem danych jest Jonasz Olszewski, prowadzący jednoosobową działalność gospodarczą.</p>
-    <p>W sprawach związanych z prywatnością możesz skontaktować się pod adresem: <strong>kontakt@jonaszolszewski.pl</strong>.</p>
-
-    <h2>2. Jakie dane przetwarzamy</h2>
-    <ul>
-      <li>Dane zapisywane lokalnie na urządzeniu: sesje, checklisty, notatki, preferencje, własne pozy, lokalne pliki zdjęć i audio oraz inne dane potrzebne do działania aplikacji offline.</li>
-      <li>Dane konta użytkownika w Firebase Authentication: identyfikator użytkownika, adres e-mail, nazwa wyświetlana oraz identyfikator dostawcy logowania, jeżeli zdecydujesz się zalogować przez Google lub Apple.</li>
-      <li>Dane backupu w chmurze Firebase Firestore i Firebase Storage: wybrane dane potrzebne do odtworzenia korzystania z aplikacji po zalogowaniu, w szczególności ustawienia profilu i aplikacji, lista ulubionych póz, sesje, checklisty, lokalizacje, własne pozy, wybrane filtry i preferencje widoków oraz powiązane pliki potrzebne do przywrócenia tych danych.</li>
-      <li>Dane funkcji społeczności "Odkrywaj": jeżeli użytkownik zdecyduje się zgłosić własną pozę do sekcji społeczności, aplikacja może przetwarzać obraz pozy, tytuł, instrukcje, przypisane kategorie i tagi, status moderacji, liczbę pobrań i zgłoszeń oraz opcjonalne publiczne dane autora, takie jak publiczna nazwa, nazwa użytkownika na Instagramie i adres strony www.</li>
-      <li>Zagregowane statystyki popularności póz: aplikacja może okresowo tworzyć globalne zestawienia "Najpopularniejsze" i "Ostatnio dodane". Takie zestawienia nie pokazują, kto polubił, zapisał lub dodał daną pozę do sesji. Końcowy wynik zawiera wyłącznie zbiorczy ranking póz, bez publicznego ujawniania tożsamości użytkowników.</li>
-      <li>Dane techniczne i diagnostyczne: podstawowe logi błędów, informacje o stabilności działania aplikacji i informacje potrzebne do ochrony usług backendowych przed nadużyciami.</li>
-    </ul>
-
-    <h2>3. W jakim celu używamy danych</h2>
-    <ul>
-      <li>aby uruchamiać aplikację i zapisywać Twoje ustawienia lokalnie,</li>
-      <li>aby umożliwić logowanie przez Google lub Apple,</li>
-      <li>aby utworzyć konto użytkownika w Firebase,</li>
-      <li>aby utworzyć, wyświetlić i przywrócić ręczny backup danych testowych w chmurze,</li>
-      <li>aby umożliwić użytkownikowi przesłanie własnej pozy do moderowanej sekcji społeczności "Odkrywaj",</li>
-      <li>aby pokazywać innym użytkownikom zaakceptowane pozy społecznościowe wraz z publicznymi danymi autora, jeśli autor nie wybrał publikacji anonimowej,</li>
-      <li>aby przyjmować zgłoszenia naruszeń, blokować autorów i prowadzić ręczną moderację treści społecznościowych,</li>
-      <li>aby okresowo zbudować lekkie, globalne i zagregowane zestawienia najpopularniejszych póz w katalogu oraz w społeczności,</li>
-      <li>aby umożliwić usunięcie konta i danych chmurowych z poziomu aplikacji,</li>
-      <li>aby chronić backend, diagnozować błędy i utrzymywać stabilność usługi.</li>
-    </ul>
-
-    <h2>4. Logowanie przez Google i Apple</h2>
-    <p>Jeżeli zdecydujesz się zalogować:</p>
-    <ul>
-      <li>logowanie jest obsługiwane przez Firebase Authentication,</li>
-      <li>dostawcą tożsamości może być Google albo Apple,</li>
-      <li>POZER otrzymuje od dostawcy wyłącznie dane potrzebne do utworzenia i utrzymania konta, takie jak identyfikator użytkownika, adres e-mail oraz nazwa wyświetlana, jeśli dostawca je udostępni,</li>
-      <li>logowanie jest opcjonalne, ale jest wymagane do używania backupu w chmurze.</li>
-    </ul>
-
-    <h2>5. Backup w chmurze</h2>
-    <p>Na obecnym etapie backup w chmurze może obejmować w szczególności:</p>
-    <ul>
-      <li>ustawienia profilu i aplikacji, w tym miasto z widżetu "Warunki na dziś", auto-lokalizację, język aplikacji i motyw,</li>
-      <li>listę ulubionych póz,</li>
-      <li>sesje, checklisty, lokalizacje i wybrane ustawienia widoków,</li>
-      <li>własne pozy użytkownika,</li>
-      <li>wybrane notatki i inne dane potrzebne do przywrócenia działania aplikacji po zalogowaniu,</li>
-      <li>powiązane pliki multimedialne, jeżeli są potrzebne do przywrócenia powyższych danych.</li>
-    </ul>
-    <p>Backup nie obejmuje obecnie wszystkich danych aplikacji. Większość treści nadal pozostaje lokalnie na urządzeniu.</p>
-    <p>Backup może zostać utworzony ręcznie przez użytkownika z poziomu sekcji "Profil i ustawienia". Po pierwszym zalogowaniu aplikacja może również utworzyć pierwszy backup startowy, a później może okresowo zapisać automatyczną kopię po ponownym otwarciu aplikacji, jeśli użytkownik nadal korzysta z konta i dane uległy zmianie.</p>
-    <p>POZER może wykorzystywać najnowszy dostępny backup użytkownika również do utworzenia globalnego rankingu najpopularniejszych póz w katalogu. Taki ranking:</p>
-    <ul>
-      <li>jest budowany najwyżej okresowo, zwykle nie częściej niż raz dziennie,</li>
-      <li>korzysta wyłącznie z najnowszej dostępnej kopii danych użytkownika, a nie z ciągłego śledzenia każdego kliknięcia w czasie rzeczywistym,</li>
-      <li>uwzględnia jedynie zbiorcze informacje, takie jak to, czy dana poza była oznaczona jako ulubiona albo dodana do sesji,</li>
-      <li>nie publikuje i nie pokazuje innym użytkownikom listy osób, które polubiły daną pozę albo zapisały ją do sesji,</li>
-      <li>zapisuje do odczytu przez aplikację wyłącznie gotowy, zagregowany wynik, a nie publiczną historię działań konkretnych osób.</li>
-    </ul>
-    <p>W sekcji społeczności "Odkrywaj" najpopularniejsze pozy są ustalane na podstawie zagregowanej liczby pobrań tych póz przez użytkowników. Również tutaj aplikacja pokazuje wyłącznie wynik zbiorczy, bez ujawniania innym użytkownikom, kto pobrał daną pozę.</p>
-
-    <h2>6. Gdzie dane są przechowywane</h2>
-    <ul>
-      <li>lokalnie na Twoim urządzeniu,</li>
-      <li>w usługach Firebase, w szczególności Firebase Authentication oraz Cloud Firestore,</li>
-      <li>tymczasowo w usługach zewnętrznych niezbędnych do działania wybranych funkcji aplikacji.</li>
-    </ul>
-
-    <h2>6a. Funkcja społeczności "Odkrywaj"</h2>
-    <p>Jeżeli użytkownik zdecyduje się opublikować własną pozę w społeczności:</p>
-    <ul>
-      <li>poza trafia najpierw do moderacji,</li>
-      <li>dopiero po zatwierdzeniu może być publicznie widoczna dla innych użytkowników w sekcji "Odkrywaj",</li>
-      <li>użytkownik może wybrać publikację anonimową albo dodać publiczną nazwę, nazwę użytkownika na Instagramie i adres strony www,</li>
-      <li>inni użytkownicy mogą pobrać taką pozę do swojej aplikacji, zgłosić naruszenie albo zablokować autora,</li>
-      <li>administrator może taką pozę zaakceptować, odrzucić, ukryć albo usunąć na stałe.</li>
-    </ul>
-    <p>Jeżeli poza zostanie ukryta, może zniknąć z publicznego feedu, ale nadal pozostać dostępna dla osób, które już wcześniej ją pobrały, jeśli jest to technicznie i prawnie uzasadnione.</p>
-    <p>Jeżeli poza zostanie usunięta na stałe z powodów moderacyjnych albo prawnych, aplikacja może usunąć ją z listy pobranych i zastąpić ją technicznym placeholderem w istniejących sesjach, aby nie zostawić uszkodzonego widoku.</p>
-
-    <h2>7. Integracje z usługami zewnętrznymi</h2>
-    <ul>
-      <li>Firebase Authentication: do logowania i obsługi kont użytkowników.</li>
-      <li>Cloud Firestore: do przechowywania prostych backupów chmurowych użytkownika.</li>
-      <li>Firebase Storage: do przechowywania zasobów aplikacji oraz innych plików używanych przez aplikację.</li>
-      <li>Firebase App Check oraz powiązane mechanizmy bezpieczeństwa: do ochrony backendu przed nadużyciami.</li>
-      <li>Google Sign-In: do logowania użytkownika kontem Google.</li>
-      <li>Sign in with Apple: do logowania użytkownika kontem Apple.</li>
-      <li>Google AI (Gemini): do funkcji AI, takich jak tworzenie ilustracji, analiza zdjęć i generowanie opisów.</li>
-      <li>Google Places API: do pobierania danych o miejscach.</li>
-      <li>Open-Meteo oraz sunrise-sunset.org: do danych pogodowych i godzin wschodu oraz zachodu słońca.</li>
-      <li>Google Sheets: jeśli użytkownik sam zdecyduje się skorzystać z importu CSV.</li>
-      <li>images.weserv.nl: do technicznego proxy niektórych obrazów.</li>
-    </ul>
-
-    <h2>8. Podstawa korzystania z funkcji chmurowych</h2>
-    <p>Korzystanie z logowania i backupu w chmurze jest dobrowolne. Jeżeli nie chcesz korzystać z funkcji konta:</p>
-    <ul>
-      <li>możesz nadal używać aplikacji lokalnie,</li>
-      <li>Twoje lokalne dane pozostają na urządzeniu,</li>
-      <li>backup w chmurze i synchronizacja konta nie będą aktywne.</li>
-      <li>Twoje lokalne dane nie będą uwzględniane w chmurowym rankingu najpopularniejszych póz w katalogu.</li>
-    </ul>
-
-    <h2>9. Usuwanie konta i danych</h2>
-    <p>Jeżeli korzystasz z logowania, możesz usunąć konto z poziomu aplikacji.</p>
-    <p>Usunięcie konta powoduje:</p>
-    <ul>
-      <li>usunięcie konta użytkownika w Firebase Authentication,</li>
-      <li>usunięcie dokumentu użytkownika i backupów zapisanych w Cloud Firestore,</li>
-      <li>wylogowanie z aplikacji.</li>
-    </ul>
-    <p>Usunięcie konta nie czyści automatycznie wszystkich danych lokalnych zapisanych na urządzeniu, chyba że użytkownik skorzysta osobno z funkcji resetu lokalnych danych lub odinstaluje aplikację.</p>
-
-    <h2>10. Jak długo przechowujemy dane</h2>
-    <ul>
-      <li>Dane lokalne pozostają na urządzeniu do momentu ich usunięcia przez użytkownika, resetu aplikacji albo odinstalowania aplikacji.</li>
-      <li>Dane konta i backupy chmurowe pozostają do czasu usunięcia konta przez użytkownika albo do czasu ręcznego usunięcia ich przez administratora w sytuacjach wymaganych prawem lub technicznie uzasadnionych.</li>
-      <li>Zagregowane rankingi popularności mogą być przechowywane osobno jako techniczne zestawienia zbiorcze potrzebne do działania aplikacji, ale nie zawierają publicznej listy działań konkretnych użytkowników.</li>
-    </ul>
-
-    <h2>11. Udostępnianie danych</h2>
-    <p>Nie sprzedajemy Twoich danych osobowych.</p>
-    <p>Dane mogą być przekazywane wyłącznie:</p>
-    <ul>
-      <li>dostawcom usług technicznych niezbędnych do działania aplikacji,</li>
-      <li>gdy wymaga tego prawo,</li>
-      <li>gdy jest to konieczne do realizacji funkcji, z której użytkownik świadomie korzysta.</li>
-    </ul>
-
-    <h2>12. Twoje prawa</h2>
-    <p>Masz prawo do:</p>
-    <ul>
-      <li>dostępu do danych,</li>
-      <li>sprostowania danych,</li>
-      <li>usunięcia danych,</li>
-      <li>ograniczenia przetwarzania,</li>
-      <li>kontaktu z administratorem w sprawach prywatności.</li>
-    </ul>
-    <p>W przypadku danych lokalnych najprostszą metodą usunięcia jest skorzystanie z odpowiednich funkcji w aplikacji albo odinstalowanie aplikacji. W przypadku danych konta i backupów chmurowych możesz użyć funkcji "Usuń konto" w aplikacji albo skontaktować się mailowo.</p>
-
-    <h2>13. Zmiany polityki prywatności</h2>
-    <p>Polityka prywatności może być aktualizowana wraz ze zmianami funkcji aplikacji, wymogów prawnych lub wymogów sklepów z aplikacjami. Aktualna wersja jest publikowana pod adresem: <strong>https://szczureknarolkach.github.io/pozer-privacy-policy/</strong>.</p>
+    <h1 id="policy-title">Polityka Prywatności Aplikacji POZER</h1>
+    <p class="muted" id="effective-date">Data wejścia w życie: 25 marca 2026 r.</p>
+    <div class="policy-content" id="policy-content"></div>
   </main>
+
+  <script src="./assets/policy.js"></script>
 </body>
 </html>
