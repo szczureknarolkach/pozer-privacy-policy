@@ -13,7 +13,6 @@ const POLICY_CONTENT = {
     pageTitle: 'Polityka Prywatności - POZER',
     brand: 'POZER',
     languageLabel: 'Język strony',
-    languageHint: 'Jeśli otworzyłeś tę stronę z aplikacji Pozer, właściwy język wybierze się automatycznie.',
     title: 'Polityka Prywatności Aplikacji POZER',
     effectiveDate: 'Data wejścia w życie: 25 marca 2026 r.',
     body: `
@@ -109,7 +108,6 @@ const POLICY_CONTENT = {
         <li>Google Places API: do pobierania danych o miejscach.</li>
         <li>Open-Meteo oraz sunrise-sunset.org: do danych pogodowych i godzin wschodu oraz zachodu słońca.</li>
         <li>Google Sheets: jeśli użytkownik sam zdecyduje się skorzystać z importu CSV.</li>
-        <li>images.weserv.nl: do technicznego proxy niektórych obrazów.</li>
       </ul>
 
       <h2>8. Podstawa korzystania z funkcji chmurowych</h2>
@@ -166,7 +164,6 @@ const POLICY_CONTENT = {
     pageTitle: 'Privacy Policy - POZER',
     brand: 'POZER',
     languageLabel: 'Page language',
-    languageHint: 'If you opened this page from the Pozer app, the matching language should be selected automatically.',
     title: 'POZER App Privacy Policy',
     effectiveDate: 'Effective date: March 25, 2026',
     body: `
@@ -262,7 +259,6 @@ const POLICY_CONTENT = {
         <li>Google Places API: for fetching place details.</li>
         <li>Open-Meteo and sunrise-sunset.org: for weather data and sunrise/sunset times.</li>
         <li>Google Sheets: if the user explicitly chooses CSV import.</li>
-        <li>images.weserv.nl: as a technical proxy for some images.</li>
       </ul>
 
       <h2>8. Basis for using cloud features</h2>
@@ -319,7 +315,6 @@ const POLICY_CONTENT = {
     pageTitle: 'Datenschutzerklärung - POZER',
     brand: 'POZER',
     languageLabel: 'Seitensprache',
-    languageHint: 'Wenn du diese Seite aus der Pozer-App geöffnet hast, sollte die passende Sprache automatisch ausgewählt werden.',
     title: 'Datenschutzerklärung der POZER-App',
     effectiveDate: 'Gültig ab: 25. März 2026',
     body: `
@@ -415,7 +410,6 @@ const POLICY_CONTENT = {
         <li>Google Places API: zum Abrufen von Ortsdaten.</li>
         <li>Open-Meteo und sunrise-sunset.org: für Wetterdaten sowie Zeiten von Sonnenaufgang und Sonnenuntergang.</li>
         <li>Google Sheets: wenn der Nutzer ausdrücklich einen CSV-Import verwendet.</li>
-        <li>images.weserv.nl: als technischer Proxy für einige Bilder.</li>
       </ul>
 
       <h2>8. Grundlage für die Nutzung von Cloud-Funktionen</h2>
@@ -474,7 +468,6 @@ const contentRoot = document.getElementById('policy-content');
 const switcherRoot = document.getElementById('language-switcher');
 const brandRoot = document.getElementById('brand');
 const languageLabelRoot = document.getElementById('language-label');
-const languageHintRoot = document.getElementById('language-hint');
 const titleRoot = document.getElementById('policy-title');
 const effectiveDateRoot = document.getElementById('effective-date');
 
@@ -562,7 +555,6 @@ const applyLanguage = (requestedLanguage) => {
 
   brandRoot.textContent = content.brand;
   languageLabelRoot.textContent = content.languageLabel;
-  languageHintRoot.textContent = content.languageHint;
   titleRoot.textContent = content.title;
   effectiveDateRoot.textContent = content.effectiveDate;
   contentRoot.innerHTML = content.body;
